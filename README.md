@@ -1,5 +1,3 @@
-# AI-TravelPLanner
-An AI-powered collaborative travel assistant that harmonizes group preferences and handles dynamic mid-trip re-planning.
 # Pocket Trip by The Last 4
 
 **Team:** Kam Pue Shan, Faustina Lai Wan Yee, Tan Wen Jie, Tang Xin Yee  
