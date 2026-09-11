@@ -15,7 +15,7 @@ Planning group trips or dynamic escapes is currently fragmented across group cha
 2. **Static Plans vs. Real-Time Disruptions:** Flight delays, sudden rainstorms, or closed venues break static itineraries, leaving travelers without dynamic guidance.
 3. **Disconnected Expenses:** Expense tracking happens separately from the itinerary, making post-trip cost calculations tedious.
 
-* **Target Stakeholders:** Solo travelers, group organizers, and friend groups with mixed budgets and preferences.
+* **Target Stakeholders:** Solo travelers, group organisers, and friend groups with mixed budgets and preferences.
 * **Existing Alternatives & Shortfalls:** 
   * *Wanderlog / TripIt:* Great for static itineraries, but fail at real-time preference balancing and automated mid-trip re-planning when disruptions happen.
   * *Splitwise:* Manages shared costs well, but operates completely isolated from daily schedules and travel routes.
@@ -23,9 +23,9 @@ Planning group trips or dynamic escapes is currently fragmented across group cha
 ### Our Solution
 An AI-powered collaborative travel assistant that eliminates group decision friction, dynamically clusters daily activities, and adapts plans on the fly during disruptions. By combining group preference vectors with real-time location and flight feeds, it turns complex travel planning into a single, effortless workflow.
 
-* **Group Harmony Engine:** A 30-second swipe quiz that aggregates individual budgets, pace, and interests into a balanced group preference matrix.
-* **Geo-Clustered Smart Routing:** Automatically groups nearby activities based on live transit time, opening hours, and geographic proximity.
-* **One-Tap "Pivot Engine" (Disruption Handler):** Re-optimizes remaining day plans in seconds when hit by delays, weather changes, or venue closures.
+* **Geo-Clustered Smart Routing:** Automatically groups nearby activities based on live transit time and geographic proximity.
+* **Democratic Coordination:** Balances group consensus with personal freedom, ensuring trip logistics never strain personal relationships.
+* **Disruption Handler:** Re-optimizes remaining day plans in seconds when hit by delays.
 * **Context-Aware Shared Ledger:** Auto-calculates individual cost shares linked directly to active itinerary stops.
 
 ---
@@ -36,21 +36,27 @@ An AI-powered collaborative travel assistant that eliminates group decision fric
 
 | Idea | Why it was dropped / kept |
 | :--- | :--- |
-| **Real-Time Pivot Engine (Chosen)** | **Kept:** Directly solves the major pain point of live mid-trip disruptions (flight delays, bad weather) without forcing manual schedule rebuilds. |
-| **Group Harmony Preference Quiz (Chosen)** | **Kept:** Replaces endless chat debates with a quantitative preference alignment matrix. |
+| **Disruption Handler (Chosen)** | **Kept:** Directly solves the major pain point of live mid-trip disruptions (flight delays, bad weather) without forcing manual schedule rebuilds. |
+| **Group Harmony Preference (Chosen)** | **Kept:** Smart scheduling that balances shared must-sees with solo breaks, ensuring nobody feels dragged along or ignored. |
 | **Context-Aware Split Ledger (Chosen)** | **Kept:** Integrates expense settlements directly into daily itinerary stops rather than using a third-party app. |
-| **Native Flight & Hotel Booking Engine** | **Dropped:** High licensing complexity and API cost for a hackathon MVP; opted for affiliate live pricing previews via API instead. |
-| **In-App AR Tour Guide & Audio Walks** | **Dropped:** High design scope overhead that strays away from core planning, budgeting, and disruption management goals. |
+| **Native Flight & Hotel Booking Engine** | **Dropped:** High licensing complexity and API cost for a hackathon. Opted for affiliate live pricing previews via API instead. |
+| **In-App Shared Album** | **Dropped:** Additional feature that strays away from core planning, budgeting, and disruption management goals. |
 
 ---
 
 ### 2.2 Ideation Boards
 
+![First Draft](firstdraft.png)
+*Figure 2.1: Initial application design and feature roadmap.*
+
 ![Problem Tree](docs/problem_tree.png)
-*Figure 2.1: Problem Tree analysis mapping the root causes of group friction and static itinerary limitations to user pain points.*
+*Figure 2.2: Problem tree analysing key usability and planning issues identified in the first draft.*
+
+![Final Draft](finaldraft.png)
+*Figure 2.3: Refined application architecture highlighting key iterations from the initial draft.*
 
 ![User Flow Diagram](docs/user_flow.png)
-*Figure 2.2: User journey from group preference synchronization to live mid-trip itinerary re-planning.*
+*Figure 2.4: User journey from group preference synchronization to live mid-trip itinerary re-planning.*
 
 ![Crazy Eights Scribbles](docs/crazy_eights.png)
 *Figure 2.3: Initial UI layout sketches evaluating list-based vs. map-centric dynamic itinerary views.*
