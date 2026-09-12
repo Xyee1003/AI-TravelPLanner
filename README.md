@@ -10,37 +10,52 @@
 ## 1. Project Overview
 
 ### The Problem
-Planning group trips or dynamic escapes is currently fragmented across group chats, booking engines, and spreadsheet trackers. The core issues stem from three key pain points:
-1. **High Group Friction:** Aligning individual budgets, daily pacing, and activity preferences across group members leads to endless debate and compromises.
-2. **Static Plans vs. Real-Time Disruptions:** Flight delays, sudden rainstorms, or closed venues break static itineraries, leaving travelers without dynamic guidance.
-3. **Disconnected Expenses:** Expense tracking happens separately from the itinerary, making post-trip cost calculations tedious.
+Group travel planning is notoriously friction-filled, often devolving into endless group chat debates, budget misunderstandings, and logistics headaches. The root causes of this breakdown include:
 
-* **Target Stakeholders:** Solo travelers, group organisers, and friend groups with mixed budgets and preferences.
-* **Existing Alternatives & Shortfalls:** 
-  * *Wanderlog / TripIt:* Great for static itineraries, but fail at real-time preference balancing and automated mid-trip re-planning when disruptions happen.
-  * *Splitwise:* Manages shared costs well, but operates completely isolated from daily schedules and travel routes.
+1. **Social Friction & Decision Paralysis**: Group members possess contrasting budgets, physical stamina levels, and activity preferences. When preferences clash, traditional voting mechanics force a "winner vs. loser" dynamic, causing social discomfort or awkward compromises.
+2. **Asynchronous Onboarding Drag**: Travel groups usually contain a mix of proactive planners and passive ("go-with-the-flow") participants. Tools that require *every* member to complete upfront preference forms stall immediately because passive users delay or refuse to fill them out.
+3. **Data Entry Fatigue & Information Scattering**: Information is fragmented across Instagram reels, Xiaohongshu posts, TikTok videos, flight confirmation PDFs, and chat screenshots. Manually copy-pasting names, addresses, opening hours, and costs into static spreadsheets creates heavy friction.
+4. **Fragile, Static Itineraries**: Traditional travel apps create fixed daily timelines. When unexpected delays occur—such as a flight lag, sudden rainstorm, or prolonged queue—the entire schedule breaks down, forcing manual re-planning on the go.
 
-### Our Solution
-An AI-powered collaborative travel assistant that eliminates group decision friction, dynamically clusters daily activities, and adapts plans on the fly during disruptions. By combining group preference vectors with real-time location and flight feeds, it turns complex travel planning into a single, effortless workflow.
+#### Stakeholders
+* **The Designated Trip Leader**: Takes on the burden of organizing, budgeting, and managing schedules while trying to keep everyone happy.
+* **Passive / Casual Group Members**: Want a fun trip without spending hours filling out surveys or managing logistics.
+* **Budget-Conscious Travelers**: Need strict, transparent cost tracking to avoid awkward post-trip expense disputes.
+* **Families & Parents**: Require location updates and peace of mind without invasively tracking young adult travelers 24/7.
 
-* **Geo-Clustered Smart Routing:** Automatically groups nearby activities based on live transit time and geographic proximity.
-* **Democratic Coordination:** Balances group consensus with personal freedom, ensuring trip logistics never strain personal relationships.
-* **Disruption Handler:** Re-optimizes remaining day plans in seconds when hit by delays.
-* **Context-Aware Shared Ledger:** Auto-calculates individual cost shares linked directly to active itinerary stops.
+#### Existing Market Solutions & Their Shortcomings
+* **Wanderlog**: Offers comprehensive itinerary building but relies heavily on text-heavy manual searches, link pasting, and manual drag-and-drop scheduling. It functions as a digital notebook rather than an active assistant and lacks non-confrontational conflict resolution tools.
+* **TripIt**: Excellent for consolidating flight and hotel confirmation emails, but fails completely at group collaboration, social media inspiration ingestion, real-time in-trip adaptation, and dynamic budget mediation.
 
 ---
 
+### Our Solution
+**Pocket Trip AI** is an AI-native group travel platform that transforms travel planning from a tedious logistical task into a fluid, adaptive experience. Instead of forcing rigid questionnaires or enforcing hard majority votes, Pocket Trip AI leverages passive AI profiling, multimodal visual parsing, and continuous budget monitoring to orchestrate trips effortlessly. When group preferences diverge, the app's AI engine automatically generates non-confrontational, parallel micro-routes with automated reunion anchors, allowing members to explore independently for short intervals before seamlessly regrouping.
+
+#### Key Feature Set
+* **AI Vision Social Inspo Parser**: Allows users to bulk-upload screenshots from Xiaohongshu, Instagram, or TikTok. OpenAI GPT-4o Vision automatically extracts attraction names, category tags, opening hours, and estimated per-person costs.
+* **Asynchronous Google Calendar Flight Sync**: Auto-detects arrival/departure windows via Google Calendar OAuth, automatically locking out unavailable time slots and building buffer periods around arrivals.
+* **AI Harmony Hub & Subgroup Micro-Loops**: Eliminates harsh rejection buttons. When preferences split, AI generates temporary 45-minute parallel routes within 300 meters of each other and designates an automated reunion anchor (e.g., a nearby dessert café).
+* **Transparent AI Rationale Engine**: Displays explicit "Why AI Suggested This" contextual tags (factoring in peak heat hours, travel distance, and group vibe) for full transparency.
+* **Live Budget Bar & Dynamic AI Budget Trim**: Real-time spending tracker displaying per-pax financial health. If an item causes budget overruns, the AI proactively suggests one-tap cost-lowering alternatives.
+* **Real-Time Disruption Management Agent**: Allows travelers to report delays or bad weather mid-trip. The AI instantly reorganizes remaining daily stops to protect mandatory highlights.
+* **Privacy-Preserving Parent View**: Generates warm, AI-summarized trip updates and high-level progress digests for parents without exposing raw, intrusive real-time GPS coordinates.
+
+---
 ## 2. Ideation & Process
 
 ### 2.1 Ideas We Considered
 
-| Idea | Why it was dropped / kept |
-| :--- | :--- |
-| **Disruption Handler (Chosen)** | **Kept:** Directly solves the major pain point of live mid-trip disruptions (flight delays, bad weather) without forcing manual schedule rebuilds. |
-| **Group Harmony Preference (Chosen)** | **Kept:** Smart scheduling that balances shared must-sees with solo breaks, ensuring nobody feels dragged along or ignored. |
-| **Context-Aware Split Ledger (Chosen)** | **Kept:** Integrates expense settlements directly into daily itinerary stops rather than using a third-party app. |
-| **Native Flight & Hotel Booking Engine** | **Dropped:** High licensing complexity and API cost for a hackathon. Opted for affiliate live pricing previews via API instead. |
-| **In-App Shared Album** | **Dropped:** Additional feature that strays away from core planning, budgeting, and disruption management goals. |
+| Idea | Status | Why it was kept / dropped |
+| :--- | :--- | :--- |
+| **AI Subgroup Micro-Loops & Auto-Reunion Anchors** | **Chosen** | **Kept**: Replaced harsh "Hard-No" splits with seamless 45-minute parallel pathways, resolving group preference conflicts without social friction or team isolation. |
+| **Social Media Screenshot Parsing (AI Vision)** | **Chosen** | **Kept**: Eliminates manual text entry by extracting location names, category tags, and price estimates directly from uploaded social media images using GPT-4o Vision. |
+| **Dynamic Live Budget Bar & Proactive AI Trim** | **Chosen** | **Kept**: Maintains financial transparency in real time without requiring tedious upfront surveys that stall initial trip creation. |
+| **Leader-Only Edit Authority with Group Micro-Votes** | **Chosen** | **Kept**: Prevents itinerary clutter and consensus deadlock by letting AI assist and members vote on lightweight cards, while the Leader retains sole final editing rights. |
+| **Passive AI Profiling (Default "Follower" Mode)** | **Chosen** | **Kept**: Resolves asynchronous onboarding bottlenecks by letting inactive users default to a "chill traveler" persona based on destination averages until they express active preferences. |
+| **In-App Shared Photo Album** | **Dropped** | **Dropped**: Removed following mentor feedback to keep the app lightweight and strictly focused on dynamic coordination, scheduling, and budget optimization. |
+| **Mandatory Upfront Group Preference Questionnaire** | **Dropped** | **Dropped**: Rejected because forcing passive group members to fill out forms before generating a trip draft created high onboarding friction and stalled group progress. |
+| **Hard-No Voting & Rigid Split Confirmation Modals** | **Dropped** | **Dropped**: Initial prototype used hard rejection buttons and binary split confirmation modals, which created social awkwardness and rigid logic branches. Replaced by soft AI arbitration. |
 
 ---
 
@@ -65,36 +80,61 @@ An AI-powered collaborative travel assistant that eliminates group decision fric
 
 ### 2.3 Mentor Consultation
 
-| Date | Mentor | Feedback Received | What Was Changed |
+| Date | Mentor | Feedback Received | What Was Changed / Team Rationale |
 | :--- | :--- | :--- | :--- |
-| 2026-09-08 | [Mentor Name] | "Full native booking transactions are too broad for a hackathon. Focus heavily on solving group conflict and dynamic disruption recovery." | Pivoted away from native transaction flows; shifted full focus to the Pivot Engine and Group Harmony quiz algorithms. |
-| 2026-09-10 | [Mentor Name] | "Make sure cost splitting automatically reacts when an itinerary item gets dropped during dynamic re-planning." | Updated database schema so ledger items link to dynamic itinerary node IDs, auto-updating balances when stops drop. |
+| **07/09/2026** | Zach Khong | 1. **Feature Scope**: Remove the Photo Album feature to keep focus sharp.<br>2. **Flight Sync**: Sync flight schedules via Google Calendar integration.<br>3. **Governance**: Assign sole editing authority to a designated Trip Leader.<br>4. **Onboarding Friction**: Solve flow blockages caused by unresponsive group members.<br>5. **Conflict Resolution**: Provide split pathways or compromise spots for conflicting preferences. | • **Agreed & Implemented**: Removed Photo Album module entirely.<br>• **Agreed & Implemented**: Integrated Google Calendar OAuth for flight availability.<br>• **Agreed & Implemented**: Restructured permissions to Leader-only edit model.<br>• **Agreed & Implemented**: Implemented AI auto-completion defaults for inactive users.<br>• **Agreed & Implemented**: Replaced hard splits with 45-minute parallel subgroup loops and automated reunion points. |
+| **11/09/2026** | Mah Qing Fung | 1. **AI Integration Depth**: The flow feels too static; increase AI touchpoints across all key screens.<br>2. **Logic Refinement**: Remove hard-coded "Hard-No" mechanics; let AI mediate decisions dynamically.<br>3. **User Onboarding**: Force users to complete preference and budget forms upfront.<br>4. **AI Transparency**: Add explicit AI explanations for schedule choices and pre-swap recommendations. | • **Agreed & Implemented**: Added AI Vision parsing, proactive AI budget guardrails, and AI disruption agents.<br>• **Agreed & Implemented**: Replaced Hard-No modals with soft AI Harmony arbitration.<br>• **Agreed & Implemented**: Added "Why AI suggested this" rationale tags and AI Smart Swap modals.<br>• **Disagreed with Upfront Forms**: We intentionally omitted mandatory upfront forms. Requiring full input from all members before generating a draft causes onboarding bottlenecks when passive members delay filling out forms. We opted for passive AI profiling and dynamic screenshot budget extraction instead. |
 
 ---
 
 ## 3. Design & Prototype
 
-**UI Prototype:** [Public Link to Figma / Canva / Web Prototype]
+**UI Prototype:** [https://www.figma.com/design/Vd08aJCY0ix9kyV9NJg8pR/UI-Prototype-Pocket-Trip?node-id=2009-632&t=7SCQYwLwL8Ws1qtk-1]
 
-| Screen Preview | Feature & Interaction Description |
-| :---: | :--- |
-| ![Screen 1](docs/screen1.png) | **Group Harmony Quiz:** Swipe-based onboarding where each user selects budget ceilings, pacing preferences, and activity tags. |
-| ![Screen 2](docs/screen2.png) | **Synced Master Itinerary:** Map-integrated schedule displaying route lines, transit times, and venue status indicators. |
-| ![Screen 3](docs/screen3.png) | **Pivot Engine Overlay:** One-tap alert center allowing users to input delays/weather alerts and preview reshuffled plans. |
-| ![Screen 4](docs/screen4.png) | **Automated Ledger Split:** Live expense ledger displaying group balances tied directly to itinerary nodes. |
+### Key Screen Breakdowns
+
+![Homepage & Trip Setup](Screenshot%202026-09-12%20202032.png)
+*Figure 3.1: Homepage & Trip Setup (`Create_Step1` & `Create_Step2`) — The Leader initializes the trip, syncs flight schedules via Google Calendar, and selects overarching "Trip Vibes" (e.g., Chill & Cafe, Food Hunt). Passive group members can join instantly without filling out tedious questionnaires.*
+
+---
+
+![Social Media Image Recognition Parsing](Screenshot%202026-09-12%20202032.png)
+*Figure 3.2: Multimodal Social Inspo Parsing (`Image Recognition 1 & 2`) — Group members drop screenshots from Instagram, TikTok, or Xiaohongshu. GPT-4o Vision processes the images, extracts venue names, categorizes spots (Must-See vs. Nice-to-Have), and calculates estimated costs.*
+
+---
+
+![Master Itinerary & AI Rationale](Screenshot%202026-09-12%20202047.png)
+*Figure 3.3: Master Itinerary & AI Rationale (`Itinerary 2nd Draft` & `Activity Desc`) — Displays the optimized itinerary timeline. Tapping any attraction reveals a modal with an explicit "Why AI Suggested This" section detailing timing, heat avoidance, and budget optimization rationale.*
+
+---
+
+![Subgroup Micro-Loops & Parallel Routing](Screenshot%202026-09-12%20202047.png)
+*Figure 3.4: Subgroup Micro-Loops (`Subgroup Itinerary`) — When member preferences diverge, the AI generates a 45-minute parallel split route. Subgroup A (Art Cafe) and Subgroup B (Historic Fort) explore nearby venues independently before automatically reuniting at a designated meeting point.*
+
+---
+
+![Proactive AI Budget Trim & In-App Chat](Screenshot%202026-09-12%20202047.png)
+*Figure 3.5: AI Budget Trim & Contextual Chat (`Trim Budget` & `Chat`) — Real-time budget monitoring tracks per-pax spending. If an item exceeds limits, the AI presents a one-tap budget-lowering alternative. The embedded chat features interactive AI voting cards to keep discussions in-app.*
+
+---
+
+![Live Disruption Agent & Parent View](Screenshot%202026-09-12%20202055.png)
+*Figure 3.6: Live Execution, Disruption Agent & Parent View (`Start Trip View`) — Mid-trip delays or bad weather trigger the AI Disruption Agent to instantly recalculate remaining stops. Meanwhile, Parent View generates high-level progress digests without invading user privacy.*
 
 ---
 
 ## 4. What Makes It Different
 
-| Feature | Our Solution | Wanderlog / TripIt | Splitwise |
-| :--- | :--- | :--- | :--- |
-| **Dynamic Re-planning** | **Instant One-Tap Pivot** (Auto-reschedules around live delays) | Static (Manual deletion & search needed) | N/A |
-| **Group Alignment** | **Vector Match Quiz** (Calculates multi-user interest overlap) | Text notes / Manual voting | N/A |
-| **Ledger Integration** | **Native & Linked** (Expenses map to daily schedule stops) | External link / Manual entry | Standalone ledger |
+### Feature Comparison Matrix
 
-* **Dynamic Pivot Engine:** Instead of forcing manual edits during disruptions, the system recalculates route order, filters out closed venues, and keeps travel times realistic.
-* **Group Harmony Quantifier:** Converts subjective group preferences into quantitative weighted vectors, auto-generating itineraries that minimize personal compromises.
+| Feature Dimension | Pocket Trip AI | Wanderlog | TripIt |
+| :--- | :--- | :--- | :--- |
+| **Inspiration Ingestion** | **Multimodal AI Vision**: Parses screenshots from Xiaohongshu, IG, and TikTok directly into pricing and location nodes | **Manual Search / Paste**: Requires typing place names or manually copying web URLs | **Email Forwarding**: Limited to confirmation emails for flights/hotels |
+| **Conflict Mediation** | **AI Subgroup Micro-Loops**: 45-min non-confrontational split paths with auto reunion anchors | **Manual Negotiation**: Group must argue out disagreements externally in third-party chats | **None**: Displays a rigid single-timeline schedule |
+| **Budget Management** | **Live AI Budget Bar**: Dynamic per-pax tracking with instant AI cost-trimming proposals | **Manual Expense Log**: Basic post-spending expense tracking | **Basic Cost Sum**: Summarizes booking costs from confirmation emails |
+| **In-Trip Adaptability** | **Proactive Disruption Agent**: Automatically reschedules remaining stops during rain or delays | **Manual Drag-and-Drop**: User must manually re-order items when plans fall through | **Flight Status Alerts Only**: Sends delay alerts without adjusting daily itineraries |
+| **User Onboarding** | **Passive AI Profiling**: Starts immediately; handles inactive members via sensible defaults | **High Friction**: Requires all members to join and manually input preferences | **Individual Setup**: Designed for solo travelers or static sharing |
+| **Group Governance** | **Leader Authority + AI Micro-Votes**: Balanced governance prevents itinerary clutter | **Unrestricted Editing**: Multiple users can edit simultaneously, causing accidental overrides | **Read-Only / Full Edit**: Lacks granular voting or AI-assisted moderation |
 
 ---
 
@@ -102,11 +142,16 @@ An AI-powered collaborative travel assistant that eliminates group decision fric
 
 ### Tech Stack
 
-* **Frontend (Next.js / Tailwind CSS):** Chosen for rapid server-side rendering, crisp mobile responsiveness, and seamless Vercel deployment. *Constraint: Must optimize client-side bundle size for low-bandwidth mobile connections.*
-* **Backend & Realtime Database (Supabase / PostgreSQL):** Provides instant WebSocket sync for group collaboration and flexible JSON schemas for itinerary arrays. *Constraint: Row Level Security (RLS) policies must be carefully tuned for shared trip access.*
-* **AI Orchestration Engine (OpenAI GPT-4o API):** Generates structured JSON outputs for travel routing and dynamic re-planning scripts. *Constraint: Requires fallback prompts to avoid hallucinated venue operational hours.*
-* **Location & Travel Feeds (Google Places API & Amadeus API):** Delivers live distance calculations, opening hours, and real-time flight status data. *Constraint: API rate limits require client-side caching of map nodes.*
-* **Hosting (Vercel):** Free tier hosting with global CDN distribution and seamless git integration.
+| Layer | Technology | Selection Rationale | Expected Constraints & Mitigation |
+| :--- | :--- | :--- | :--- |
+| **Frontend** | **React Native (Expo)** | Cross-platform (iOS/Android) compatibility, rapid UI prototyping, and smooth native map rendering capabilities. | High memory consumption during batch image uploads; mitigated by client-side image compression before API transmission. |
+| **Backend API** | **Node.js / Express** | Asynchronous, non-blocking I/O ideal for real-time chat, concurrent voting cards, and API orchestration. | Single-threaded bottlenecks; compute-heavy AI processing is offloaded to asynchronous background jobs. |
+| **Database** | **Supabase (PostgreSQL)** | Relational data integrity for complex trip hierarchies, combined with built-in WebSockets for real-time collaboration. | Connection limit thresholds on free tier; mitigated using Supabase connection pooling (PgBouncer). |
+| **AI Services** | **OpenAI GPT-4o Vision API** | State-of-the-art multimodal capability to parse unstructured travel screenshots, execute OCR, and infer costs. | API latency (2–4s) and token costs; mitigated by caching venue metadata and stripping non-essential visual tokens. |
+| **External APIs** | **Google Maps & Calendar APIs** | Industry standard for place details, distance/duration matrix calculations, and OAuth calendar schedule sync. | Strict API rate limits and usage costs; mitigated by aggressively caching geocoding results in PostgreSQL. |
+| **Hosting** | **Vercel / Render** | Instant CI/CD deployments with serverless architecture and preview environments for fast feedback loops. | Serverless cold starts; mitigated by keeping core backend endpoints warm via ping health-checks. |
+
+---
 
 ### System Architecture Diagram
 
@@ -115,6 +160,22 @@ An AI-powered collaborative travel assistant that eliminates group decision fric
 
 ### Build Plan & Scope (3-Week Hackathon MVP)
 
-* **Week 1 (Data & Sync Core):** Set up Supabase DB schemas, implement multi-user trip joining logic, and construct the Group Harmony quiz interface.
-* **Week 2 (Routing & AI Integration):** Wire Google Places API to OpenAI structured output to generate map-clustered daily schedules.
-* **Week 3 (Pivot Engine & Ledger Polish):** Finalize the one-tap delay/weather re-plan engine, link shared expense splitting to itinerary nodes, and perform end-to-end user testing.
+#### Week 1: Core Architecture & Data Integration
+* Set up React Native (Expo) shell, navigation stacks, and Figma-aligned UI design tokens.
+* Configure Supabase PostgreSQL schema with Leader-only edit permissions and WebSocket subscription channels.
+* Implement Google Calendar OAuth integration to pull user flight schedules and automatically flag availability windows.
+
+#### Week 2: AI Vision & Itinerary Generation Engine
+* Build backend integration with OpenAI GPT-4o Vision API for multi-image screenshot processing and venue extraction.
+* Develop the **AI Harmony Router** algorithm to generate master timelines and identify preference divergence points.
+* Implement the **Subgroup Micro-Loop** logic: auto-generating 45-minute parallel branches and identifying nearest coffee/dessert reunion anchors via Google Places API.
+
+#### Week 3: Dynamic Budgeting & In-App Collaboration
+* Build the frontend **Live Budget Bar** component with per-pax dynamic calculation hooks.
+* Develop the **Proactive AI Budget Trim** engine to generate automated cost-cutting swap proposals.
+* Implement in-app chat with embedded interactive voting cards (allowing members to approve/reject nodes directly in-chat).
+
+#### Week 4: Live Execution Agent, Safety & Testing
+* Build the **Report Disruption** workflow to recalculate remaining stops in response to delays or weather events.
+* Implement the **Parent View** digest generator to output high-level AI status reports.
+* Conduct end-to-end integration testing, API error handling, and performance optimization prior to submission.
