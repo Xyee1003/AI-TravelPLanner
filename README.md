@@ -80,12 +80,60 @@ Group travel planning is notoriously friction-filled, often devolving into endle
 
 ### 2.3 Mentor Consultation
 
-| Date | Mentor | Feedback Received | What Was Changed / Team Rationale |
-| :--- | :--- | :--- | :--- |
-| **07/09/2026** | Zach Khong | 1. **Feature Scope**: Remove the Photo Album feature to keep focus sharp.<br>2. **Flight Sync**: Sync flight schedules via Google Calendar integration.<br>3. **Governance**: Assign sole editing authority to a designated Trip Leader.<br>4. **Onboarding Friction**: Solve flow blockages caused by unresponsive group members.<br>5. **Conflict Resolution**: Provide split pathways or compromise spots for conflicting preferences. | • **Agreed & Implemented**: Removed Photo Album module entirely.<br>• **Agreed & Implemented**: Integrated Google Calendar OAuth for flight availability.<br>• **Agreed & Implemented**: Restructured permissions to Leader-only edit model.<br>• **Agreed & Implemented**: Implemented AI auto-completion defaults for inactive users.<br>• **Agreed & Implemented**: Replaced hard splits with 45-minute parallel subgroup loops and automated reunion points. |
-| **11/09/2026** | Mah Qing Fung | 1. **AI Integration Depth**: The flow feels too static; increase AI touchpoints across all key screens.<br>2. **Logic Refinement**: Remove hard-coded "Hard-No" mechanics; let AI mediate decisions dynamically.<br>3. **User Onboarding**: Force users to complete preference and budget forms upfront.<br>4. **AI Transparency**: Add explicit AI explanations for schedule choices and pre-swap recommendations. | • **Agreed & Implemented**: Added AI Vision parsing, proactive AI budget guardrails, and AI disruption agents.<br>• **Agreed & Implemented**: Replaced Hard-No modals with soft AI Harmony arbitration.<br>• **Agreed & Implemented**: Added "Why AI suggested this" rationale tags and AI Smart Swap modals.<br>• **Disagreed with Upfront Forms**: We intentionally omitted mandatory upfront forms. Requiring full input from all members before generating a draft causes onboarding bottlenecks when passive members delay filling out forms. We opted for passive AI profiling and dynamic screenshot budget extraction instead. |
-
----
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Mentor</th>
+      <th>Feedback Received</th>
+      <th>What Was Changed / Team Rationale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Session 1: Zach Khong -->
+    <tr>
+      <td rowspan="5"><b>07/09/2026</b></td>
+      <td rowspan="5">Zach Khong<br>(Design Mentor)</td>
+      <td><b>1. Feature Scope</b><br>Remove the Photo Album feature to keep focus sharp.</td>
+      <td><b>Agreed & Implemented</b><br>Removed Photo Album module entirely.</td>
+    </tr>
+    <tr>
+      <td><b>2. Flight Sync</b><br>Sync flight schedules via Google Calendar integration.</td>
+      <td><b>Agreed & Implemented</b><br>Integrated Google Calendar OAuth for flight availability.</td>
+    </tr>
+    <tr>
+      <td><b>3. Governance</b><br>Assign sole editing authority to a designated Trip Leader.</td>
+      <td><b>Agreed & Implemented</b><br>Restructured permissions to Leader-only edit model.</td>
+    </tr>
+    <tr>
+      <td><b>4. Onboarding Friction</b><br>Solve flow blockages caused by unresponsive group members.</td>
+      <td><b>Agreed & Implemented</b><br>Implemented AI auto-completion defaults for inactive users.</td>
+    </tr>
+    <tr>
+      <td><b>5. Conflict Resolution</b><br>Provide split pathways or compromise spots for conflicting preferences.</td>
+      <td><b>Agreed & Implemented</b><br>Replaced hard splits with 45-minute parallel subgroup loops and automated reunion points.</td>
+    </tr>
+    <!-- Session 2: Technical Mentor -->
+    <tr>
+      <td rowspan="4"><b>11/09/2026</b></td>
+      <td rowspan="4">Technical Mentor</td>
+      <td><b>1. AI Integration Depth</b><br>Increase AI touchpoints across all key screens.</td>
+      <td><b>Agreed & Implemented</b><br>Added AI Vision parsing, proactive AI budget guardrails, and AI disruption agents.</td>
+    </tr>
+    <tr>
+      <td><b>2. Logic Refinement</b><br>Remove hard-coded "Hard-No" mechanics; let AI mediate decisions dynamically.</td>
+      <td><b>Agreed & Implemented</b><br>Replaced Hard-No modals with soft AI Harmony arbitration.</td>
+    </tr>
+    <tr>
+      <td><b>3. User Onboarding</b><br>Force users to complete preference and budget forms upfront.</td>
+      <td><b>Disagreed & Omitted Upfront Forms</b><br>Opted for passive AI profiling and dynamic screenshot budget parsing instead to prevent onboarding bottlenecks.</td>
+    </tr>
+    <tr>
+      <td><b>4. AI Transparency</b><br>Add explicit AI explanations for schedule choices and pre-swap recommendations.</td>
+      <td><b>Agreed & Implemented</b><br>Added "Why AI suggested this" rationale tags and AI Smart Swap modals.</td>
+    </tr>
+  </tbody>
+</table>
 
 ## 3. Design & Prototype
 
@@ -94,31 +142,37 @@ Group travel planning is notoriously friction-filled, often devolving into endle
 ### Key Screen Breakdowns
 
 ![Homepage & Trip Setup](docs/assets/1.png)
+
 *Figure 3.1: Homepage & Trip Setup (`Create_Step1` & `Create_Step2`) — The Leader initializes the trip, syncs flight schedules via Google Calendar, and selects overarching "Trip Vibes" (e.g., Chill & Cafe, Food Hunt). Passive group members can join instantly without filling out tedious questionnaires.*
 
 ---
 
 ![Social Media Image Recognition Parsing](docs/assets/2.png)
+
 *Figure 3.2: Multimodal Social Inspo Parsing (`Image Recognition 1 & 2`) — Group members drop screenshots from Instagram, TikTok, or Xiaohongshu. GPT-4o Vision processes the images, extracts venue names, categorizes spots (Must-See vs. Nice-to-Have), and calculates estimated costs.*
 
 ---
 
 ![Master Itinerary & AI Rationale](docs/assets/3.png)
+
 *Figure 3.3: Master Itinerary & AI Rationale (`Itinerary 2nd Draft` & `Activity Desc`) — Displays the optimized itinerary timeline. Tapping any attraction reveals a modal with an explicit "Why AI Suggested This" section detailing timing, heat avoidance, and budget optimization rationale.*
 
 ---
 
 ![Subgroup Micro-Loops & Parallel Routing](docs/assets/4.png)
+
 *Figure 3.4: Subgroup Micro-Loops (`Subgroup Itinerary`) — When member preferences diverge, the AI generates a 45-minute parallel split route. Subgroup A (Art Cafe) and Subgroup B (Historic Fort) explore nearby venues independently before automatically reuniting at a designated meeting point.*
 
 ---
 
 ![Proactive AI Budget Trim & In-App Chat](docs/assets/5.png)
+
 *Figure 3.5: AI Budget Trim & Contextual Chat (`Trim Budget` & `Chat`) — Real-time budget monitoring tracks per-pax spending. If an item exceeds limits, the AI presents a one-tap budget-lowering alternative. The embedded chat features interactive AI voting cards to keep discussions in-app.*
 
 ---
 
 ![Live Disruption Agent & Parent View](docs/assets/6.png)
+
 *Figure 3.6: Live Execution, Disruption Agent & Parent View (`Start Trip View`) — Mid-trip delays or bad weather trigger the AI Disruption Agent to instantly recalculate remaining stops. Meanwhile, Parent View generates high-level progress digests without invading user privacy.*
 
 ---
