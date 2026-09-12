@@ -209,8 +209,44 @@ Group travel planning is notoriously friction-filled, often devolving into endle
 
 ### System Architecture Diagram
 
-![System Architecture](docs/architecture.png)
-*Figure 5.1: High-level data architecture showing real-time client sync via Supabase WebSockets and background AI plan recalculation via serverless functions.*
+```mermaid
+graph TD
+    classDef client fill:#e1f5fe,stroke:#0288d1,stroke-width:2px;
+    classDef server fill:#fff3e0,stroke:#f57c00,stroke-width:2px;
+    classDef db fill:#e8f5e9,stroke:#388e3c,stroke-width:2px;
+    classDef ai fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px;
+
+    subgraph Client ["1. Frontend Layer (React Native / Expo)"]
+        UI_Upload["Image Upload Sync (Vision UI)"]:::client
+        UI_Cards["Interactive Voting Cards"]:::client
+        UI_Map["Map Canvas & Live Itinerary"]:::client
+    end
+
+    subgraph Server ["2. Backend Services (Node.js / Express Engine)"]
+        API_Vision["AI Vision Parsing Pipeline"]:::server
+        API_Harmony["AI Harmony Subgroup Router"]:::server
+        API_Budget["Live Budget & Trim Engine"]:::server
+    end
+
+    subgraph External ["3. Cloud Infrastructure & External APIs"]
+        Ext_OpenAI["OpenAI GPT-4o Vision API"]:::ai
+        Ext_GoogleMaps["Google Maps / Places API"]:::ai
+        Ext_GoogleCal["Google Calendar OAuth API"]:::ai
+        DB_Supa[("Supabase (PostgreSQL & WebSockets)")]:::db
+    end
+
+    %% Flow Connections
+    UI_Upload -->|Screenshot Data| API_Vision
+    UI_Cards -->|Vote / Preference Event| API_Harmony
+    UI_Map -->|Cost & Expense Track| API_Budget
+
+    API_Vision -->|OCR & Extraction| Ext_OpenAI
+    API_Harmony -->|Routing & Meeting Points| Ext_GoogleMaps
+    UI_Upload -.->|Flight Sync| Ext_GoogleCal
+
+    API_Vision <--> DB_Supa
+    API_Harmony <--> DB_Supa
+    API_Budget <--> DB_Supa
 
 ### Build Plan & Scope (3-Week Hackathon MVP)
 
