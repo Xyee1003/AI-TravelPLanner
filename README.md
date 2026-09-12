@@ -93,7 +93,7 @@ Group travel planning is notoriously friction-filled, often devolving into endle
     <!-- Session 1: Zach Khong -->
     <tr>
       <td rowspan="5"><b>07/09/2026</b></td>
-      <td rowspan="5">Zach Khong<br>(Design Mentor)</td>
+      <td rowspan="5">Zach Khong</td>
       <td><b>1. Feature Scope</b><br>Remove the Photo Album feature to keep focus sharp.</td>
       <td><b>Agreed & Implemented</b><br>Removed Photo Album module entirely.</td>
     </tr>
@@ -113,10 +113,10 @@ Group travel planning is notoriously friction-filled, often devolving into endle
       <td><b>5. Conflict Resolution</b><br>Provide split pathways or compromise spots for conflicting preferences.</td>
       <td><b>Agreed & Implemented</b><br>Replaced hard splits with 45-minute parallel subgroup loops and automated reunion points.</td>
     </tr>
-    <!-- Session 2: Technical Mentor -->
+    <!-- Session 2: Mah Qing Fung -->
     <tr>
       <td rowspan="4"><b>11/09/2026</b></td>
-      <td rowspan="4">Technical Mentor</td>
+      <td rowspan="4">Mah Qing Fung</td>
       <td><b>1. AI Integration Depth</b><br>Increase AI touchpoints across all key screens.</td>
       <td><b>Agreed & Implemented</b><br>Added AI Vision parsing, proactive AI budget guardrails, and AI disruption agents.</td>
     </tr>
