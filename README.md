@@ -10,17 +10,17 @@
 ## 1. Project Overview
 
 ### The Problem
-Group travel planning is notoriously friction-filled, often devolving into endless group chat debates, budget misunderstandings, and logistics headaches. The root causes of this breakdown include:
+Group travel planning is notoriously friction-filled, often devolving into endless group chat debates, budget misunderstandings, and logistics headaches. Through user research and problem-tree analysis, we identified four root causes behind this breakdown:
 
-1. **Social Friction & Decision Paralysis**: Group members possess contrasting budgets, physical stamina levels, and activity preferences. When preferences clash, traditional voting mechanics force a "winner vs. loser" dynamic, causing social discomfort or awkward compromises.
-2. **Asynchronous Onboarding Drag**: Travel groups usually contain a mix of proactive planners and passive ("go-with-the-flow") participants. Tools that require *every* member to complete upfront preference forms stall immediately because passive users delay or refuse to fill them out.
-3. **Data Entry Fatigue & Information Scattering**: Information is fragmented across Instagram reels, Xiaohongshu posts, TikTok videos, flight confirmation PDFs, and chat screenshots. Manually copy-pasting names, addresses, opening hours, and costs into static spreadsheets creates heavy friction.
-4. **Fragile, Static Itineraries**: Traditional travel apps create fixed daily timelines. When unexpected delays occur—such as a flight lag, sudden rainstorm, or prolonged queue—the entire schedule breaks down, forcing manual re-planning on the go.
+1. **Unrealistic & Conflicting Budgets**: Users often lack local market cost awareness (e.g., seasonal price surges). Traditional budget sliders without intelligent price floors lead to impossible expectations (e.g., trying to accommodate a RM 1000 traveler and a RM 200 traveler on the same trip). Furthermore, traditional apps fail to let users choose *where* to trim costs (e.g., accommodation vs. dining), leading to poor overall travel experiences.
+2. **Subgroup Explosion & Over-Customization**: Allowing unlimited "wants" and "dislikes" gives every preference equal weight. This causes an explosion of tiny, isolated subgroups, fragmenting the travel group and destroying the shared experience.
+3. **Asynchronous Onboarding Bottlenecks**: Travel groups usually consist of proactive planners and passive participants. When tools require *every* member to complete preference questionnaires before generating an itinerary, a single "Pending" member stalls the entire group.
+4. **Flight Schedule Asymmetry**: Group members rarely arrive on the exact same flight or at the same time. Fixed timelines fail to accommodate staggered arrival and departure windows.
 
 #### Stakeholders
 * **The Designated Trip Leader**: Takes on the burden of organizing, budgeting, and managing schedules while trying to keep everyone happy.
 * **Passive / Casual Group Members**: Want a fun trip without spending hours filling out surveys or managing logistics.
-* **Budget-Conscious Travelers**: Need strict, transparent cost tracking to avoid awkward post-trip expense disputes.
+* **Budget-Conscious Travelers**: Need strict, transparent cost tracking without being forced into ultra-low-quality accommodation or food options.
 * **Families & Parents**: Require location updates and peace of mind without invasively tracking young adult travelers 24/7.
 
 #### Existing Market Solutions & Their Shortcomings
@@ -35,9 +35,9 @@ Group travel planning is notoriously friction-filled, often devolving into endle
 #### Key Feature Set
 * **AI Vision Social Inspo Parser**: Allows users to bulk-upload screenshots from Xiaohongshu, Instagram, or TikTok. OpenAI GPT-4o Vision automatically extracts attraction names, category tags, opening hours, and estimated per-person costs.
 * **Asynchronous Google Calendar Flight Sync**: Auto-detects arrival/departure windows via Google Calendar OAuth, automatically locking out unavailable time slots and building buffer periods around arrivals.
-* **AI Harmony Hub & Subgroup Micro-Loops**: Eliminates harsh rejection buttons. When preferences split, AI generates temporary 45-minute parallel routes within 300 meters of each other and designates an automated reunion anchor (e.g., a nearby dessert café).
+* **AI Harmony Hub & Controlled Subgroup Micro-Loops**: Eliminates harsh rejection buttons. To prevent subgroup explosion, users are granted a maximum of **1 Dislike per day**. When preferences split, AI generates temporary 45-minute parallel routes within 300 meters of each other and designates an automated reunion anchor (e.g., a nearby dessert café).
 * **Transparent AI Rationale Engine**: Displays explicit "Why AI Suggested This" contextual tags (factoring in peak heat hours, travel distance, and group vibe) for full transparency.
-* **Live Budget Bar & Dynamic AI Budget Trim**: Real-time spending tracker displaying per-pax financial health. If an item causes budget overruns, the AI proactively suggests one-tap cost-lowering alternatives.
+* **Live Budget Bar & Selective AI Budget Trim**: Real-time spending tracker displaying per-pax financial health. Instead of forcing cheap alternatives across the board, AI allows users to choose specific areas to trim costs (e.g., swapping a high-end dinner while keeping a preferred stay).
 * **Real-Time Disruption Management Agent**: Allows travelers to report delays or bad weather mid-trip. The AI instantly reorganizes remaining daily stops to protect mandatory highlights.
 * **Privacy-Preserving Parent View**: Generates warm, AI-summarized trip updates and high-level progress digests for parents without exposing raw, intrusive real-time GPS coordinates.
 
@@ -48,35 +48,60 @@ Group travel planning is notoriously friction-filled, often devolving into endle
 
 | Idea | Status | Why it was kept / dropped |
 | :--- | :--- | :--- |
-| **AI Subgroup Micro-Loops & Auto-Reunion Anchors** | **Chosen** | **Kept**: Replaced harsh "Hard-No" splits with seamless 45-minute parallel pathways, resolving group preference conflicts without social friction or team isolation. |
-| **Social Media Screenshot Parsing (AI Vision)** | **Chosen** | **Kept**: Eliminates manual text entry by extracting location names, category tags, and price estimates directly from uploaded social media images using GPT-4o Vision. |
-| **Dynamic Live Budget Bar & Proactive AI Trim** | **Chosen** | **Kept**: Maintains financial transparency in real time without requiring tedious upfront surveys that stall initial trip creation. |
-| **Leader-Only Edit Authority with Group Micro-Votes** | **Chosen** | **Kept**: Prevents itinerary clutter and consensus deadlock by letting AI assist and members vote on lightweight cards, while the Leader retains sole final editing rights. |
-| **Passive AI Profiling (Default "Follower" Mode)** | **Chosen** | **Kept**: Resolves asynchronous onboarding bottlenecks by letting inactive users default to a "chill traveler" persona based on destination averages until they express active preferences. |
+| **AI Subgroup Micro-Loops & 1 Dislike/Day Threshold** | **Chosen** | **Kept**: Replaces harsh splits with parallel pathways. Enforces a cap of 1 Dislike per day to prevent subgroup explosion caused by unlimited "wants" and "don'ts". |
+| **Social Media Screenshot Parsing (AI Vision)** | **Chosen** | **Kept**: Eliminates manual text entry by extracting venue names and price estimates directly from uploaded social media images using GPT-4o Vision[cite: 2]. |
+| **Dynamic Live Budget Bar & Selective AI Trim** | **Chosen** | **Kept**: Solves the problem of "zero-floor" sliders and market cost ignorance[cite: 1, 2]. Allows members with drastically different budgets (e.g., RM 1000 vs. RM 200) to selectively trim specific cost areas (e.g., food vs. stays). |
+| **Leader-Only Edit Authority with Micro-Votes** | **Chosen** | **Kept**: Prevents itinerary clutter and accidental overrides caused by unrestricted multi-user editing[cite: 2], while allowing lightweight voting cards in chat. |
+| **Passive AI Profiling (Default "Follower" Mode)** | **Chosen** | **Kept**: Eliminates group onboarding bottlenecks caused by waiting for "Pending" members to complete forms before generating an itinerary draft[cite: 2]. |
+| **Google Calendar Flight Sync Integration** | **Chosen** | **Kept**: Solves flight schedule asymmetry where group members arrive on different flights or at different times[cite: 2]. |
 | **In-App Shared Photo Album** | **Dropped** | **Dropped**: Removed following mentor feedback to keep the app lightweight and strictly focused on dynamic coordination, scheduling, and budget optimization. |
-| **Mandatory Upfront Group Preference Questionnaire** | **Dropped** | **Dropped**: Rejected because forcing passive group members to fill out forms before generating a trip draft created high onboarding friction and stalled group progress. |
-| **Hard-No Voting & Rigid Split Confirmation Modals** | **Dropped** | **Dropped**: Initial prototype used hard rejection buttons and binary split confirmation modals, which created social awkwardness and rigid logic branches. Replaced by soft AI arbitration. |
+| **Mandatory Upfront Group Preference Questionnaire** | **Dropped** | **Dropped**: Rejected because requiring every member to complete questionnaires upfront wasted time waiting for inactive/pending users and stalled group progress[cite: 2]. |
+| **Zero-Floor Budget Sliders & Fixed Group Budgeting** | **Dropped** | **Dropped**: Dropped because forcing the lowest group budget or using unconstrained sliders created completely unrealistic trip plans that ignored local seasonal costs. |
 
 ---
 
 ### 2.2 Ideation Boards
 
-![First Draft](firstdraft.png)
-*Figure 2.1: Initial application design and feature roadmap.*
+To design Pocket Trip AI, our team conducted a root-cause breakdown of group travel friction, audited the flaws in our initial prototype, and systematically filtered ideas using a How Might We (HMW) framework.
 
-![Problem Tree](docs/problem_tree.png)
-*Figure 2.2: Problem tree analysing key usability and planning issues identified in the first draft.*
+#### 1. Root-Cause Analysis (Problem Tree)
 
-![Final Draft](finaldraft.png)
-*Figure 2.3: Refined application architecture highlighting key iterations from the initial draft.*
+![Problem Tree Analysis](docs/assets/problem_tree.png)
+*Figure 2.1: Problem Tree Mapping — Tracing how unprioritized preferences, zero-floor budget sliders, and market cost ignorance directly lead to member friction and plan abandonment.*
 
-![User Flow Diagram](docs/user_flow.png)
-*Figure 2.4: User journey from group preference synchronization to live mid-trip itinerary re-planning.*
-
-![Crazy Eights Scribbles](docs/crazy_eights.png)
-*Figure 2.3: Initial UI layout sketches evaluating list-based vs. map-centric dynamic itinerary views.*
+* **Preference Overload**: Allowing unlimited "wants" and "don'ts" without prioritization creates niche activity combinations and tiny, isolated subgroups.
+* **Budget Irreconcilability**: Traditional zero-floor budget sliders ignore local seasonal costs. This makes it impossible to accommodate members with drastically different financial means (e.g., RM 1000 vs. RM 200), leaving users unable to choose *where* to cut costs (e.g., dining vs. accommodation).
+* **Core Downstream Impact**: Friction and disagreements between members, low user conversion, and dissatisfaction from being locked into disliked, low-quality activities.
 
 ---
+
+#### 2. First Draft Prototype Audit & Pain Points
+
+![First Draft Pain Point Audit](docs/assets/first_draft_audit.png)
+*Figure 2.2: Initial Flow Critiques — Identifying onboarding bottlenecks caused by pending members, uncoordinated flight arrival times, and unmoderated editing rights.*
+
+* **Onboarding Bottlenecks**: Requiring upfront preference forms created severe delays whenever inactive group members remained in a "Pending" state.
+* **Flight Schedule Asymmetry**: Group members rarely arrive on the same flight or at the same time, rendering static, un-synced schedules unusable.
+* **Unrestricted Editing Clutter**: Allowing any member to edit created overloaded activity lists without accommodating individual preferences or budget limits.
+
+---
+
+#### 3. How Might We (HMW) & Idea Selection Board
+
+![HMW and Idea Selection Board](docs/assets/hmw_matrix.png)
+*Figure 2.3: Ideation & Selection Board — Mapping HMW questions across Preferences, Budget, and Engagement, evaluating trade-offs, and selecting our final feature set.*
+
+##### Preference Control
+* **Explored & Dropped**: Leader-only picks were rejected as unfair; mandatory voting on every item stalled progress.
+* **Final Pick**: Granted each member a set of must-have locations and a strict limit of **1 Dislike per day** to bound subgroup branching without social friction.
+
+##### Budget Flexibility
+* **Explored & Dropped**: Forcing the group to follow the lowest budget was deemed unfair to higher spenders; categorizing members into budget subgroups fragmented the trip.
+* **Final Pick**: Display total estimated budget upfront and allow users to selectively trim costs in specific categories (e.g., lodging vs. food).
+
+##### Engagement & Input
+* **Explored & Dropped**: Direct in-app booking was dropped as an unrealistic build scope.
+* **Final Pick**: Integrated an **AI Chatbot** for instant conversational edits, nearby stay recommendations with price estimates, and an **Inspo Image Parser** to extract locations directly from uploaded social media screenshots.
 
 ### 2.3 Mentor Consultation
 
