@@ -93,32 +93,32 @@ Group travel planning is notoriously friction-filled, often devolving into endle
 
 ### Key Screen Breakdowns
 
-![Homepage & Trip Setup](Screenshot%202026-09-12%20202032.png)
+![Homepage & Trip Setup](docs/assets/1.png)
 *Figure 3.1: Homepage & Trip Setup (`Create_Step1` & `Create_Step2`) — The Leader initializes the trip, syncs flight schedules via Google Calendar, and selects overarching "Trip Vibes" (e.g., Chill & Cafe, Food Hunt). Passive group members can join instantly without filling out tedious questionnaires.*
 
 ---
 
-![Social Media Image Recognition Parsing](Screenshot%202026-09-12%20202032.png)
+![Social Media Image Recognition Parsing](docs/assets/2.png)
 *Figure 3.2: Multimodal Social Inspo Parsing (`Image Recognition 1 & 2`) — Group members drop screenshots from Instagram, TikTok, or Xiaohongshu. GPT-4o Vision processes the images, extracts venue names, categorizes spots (Must-See vs. Nice-to-Have), and calculates estimated costs.*
 
 ---
 
-![Master Itinerary & AI Rationale](Screenshot%202026-09-12%20202047.png)
+![Master Itinerary & AI Rationale](docs/assets/3.png)
 *Figure 3.3: Master Itinerary & AI Rationale (`Itinerary 2nd Draft` & `Activity Desc`) — Displays the optimized itinerary timeline. Tapping any attraction reveals a modal with an explicit "Why AI Suggested This" section detailing timing, heat avoidance, and budget optimization rationale.*
 
 ---
 
-![Subgroup Micro-Loops & Parallel Routing](Screenshot%202026-09-12%20202047.png)
+![Subgroup Micro-Loops & Parallel Routing](docs/assets/4.png)
 *Figure 3.4: Subgroup Micro-Loops (`Subgroup Itinerary`) — When member preferences diverge, the AI generates a 45-minute parallel split route. Subgroup A (Art Cafe) and Subgroup B (Historic Fort) explore nearby venues independently before automatically reuniting at a designated meeting point.*
 
 ---
 
-![Proactive AI Budget Trim & In-App Chat](Screenshot%202026-09-12%20202047.png)
+![Proactive AI Budget Trim & In-App Chat](docs/assets/5.png)
 *Figure 3.5: AI Budget Trim & Contextual Chat (`Trim Budget` & `Chat`) — Real-time budget monitoring tracks per-pax spending. If an item exceeds limits, the AI presents a one-tap budget-lowering alternative. The embedded chat features interactive AI voting cards to keep discussions in-app.*
 
 ---
 
-![Live Disruption Agent & Parent View](Screenshot%202026-09-12%20202055.png)
+![Live Disruption Agent & Parent View](docs/assets/6.png)
 *Figure 3.6: Live Execution, Disruption Agent & Parent View (`Start Trip View`) — Mid-trip delays or bad weather trigger the AI Disruption Agent to instantly recalculate remaining stops. Meanwhile, Parent View generates high-level progress digests without invading user privacy.*
 
 ---
