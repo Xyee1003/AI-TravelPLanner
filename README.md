@@ -235,7 +235,6 @@ graph TD
         DB_Supa[("Supabase (PostgreSQL & WebSockets)")]:::db
     end
 
-    %% Flow Connections
     UI_Upload -->|Screenshot Data| API_Vision
     UI_Cards -->|Vote / Preference Event| API_Harmony
     UI_Map -->|Cost & Expense Track| API_Budget
@@ -247,6 +246,7 @@ graph TD
     API_Vision <--> DB_Supa
     API_Harmony <--> DB_Supa
     API_Budget <--> DB_Supa
+```
 
 ### Build Plan & Scope (3-Week Hackathon MVP)
 
